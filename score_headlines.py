@@ -48,7 +48,7 @@ def load_data(file_path, source):
 
 
 # apply model to headlines
-def score_headlines(data, clf, model):
+def score_headlines(data):
     """
     Scores the headlines using the classifier and model.
 
@@ -69,7 +69,7 @@ def score_headlines(data, clf, model):
 
 
 # output
-def save_headline_scores(headline_scores, source, year, month, day):
+def save_headline_scores(headline_scores, source):
     """
     Saves the scored headlines to a text file with the given source and date.
 
@@ -108,8 +108,8 @@ def main():
         sys.exit(1)
 
     data, source = load_data(file_path, source)
-    headline_scores = score_headlines(data, clf, model)
-    save_headline_scores(headline_scores, source, year, month, day)
+    headline_scores = score_headlines(data)
+    save_headline_scores(headline_scores, source)
 
 
 if __name__ == "__main__":
