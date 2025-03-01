@@ -14,13 +14,10 @@ import requests
 import json
 import logging
 
-import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--API_URL", default="http://localhost:8080", type=str)
-args = parser.parse_args()
 
-API_URL = args.API_URL
+# Set up the API URL
+API_URL = "http://104.248.15.218:8086"
 
 def main(API_URL):
     # Set up the Streamlit app
