@@ -14,8 +14,13 @@ import requests
 import json
 import logging
 
-# Set up the API URL
-API_URL = "http://localhost:8080"
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--API_URL", default="http://localhost:8080", type=str)
+args = parser.parse_args()
+
+API_URL = args.API_URL
 
 def main(API_URL):
     # Set up the Streamlit app
@@ -44,4 +49,4 @@ if __name__ == "__main__":
     
 
 #deploy
-#streamlit run scoreheadlines_app.py "http://localhost:8080" --server.port 9086
+#streamlit run scoreheadlines_app.py -- --API_URL "http://localhost:8080" --server.port 9086
